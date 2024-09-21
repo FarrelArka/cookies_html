@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croquant Cookies</title>
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logoContent">
+            <a href="#" class="logo"><img src="images/logo kita.png" alt="Logo"></a>
+            <h1 class="logoName">Croquant Cookies</h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="user.php">Beranda</a>
+            <a href="product.php" class="active">Produk</a>
+            <a href="cart.php">Keranjang</a>
+            <a href="order.php">Pesanan</a>
+            <a href="#contact">Hubungi</a>
+        </nav>
+
+        <div class="nav-right">
+            <div class="icon">
+                <i class="fas fa-search" id="search"></i>
+                <i class="fas fa-bars" id="menu-bar"></i>
+            </div>
+            <div class="search">
+                <form method="GET" action="product.php">
+                    <input type="search" name="search_query" placeholder="Search...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <a href="profile_user.php">
+                <div class="profile">
+                    <img src="path/to/profile_picture.jpg" alt="Profile Picture" width="50" height="50" id="profileImage">
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <section class="product" id="product">
+        <h1>Produk</h1>
+        <br><br>
+        <div class="product-container">
+            <!-- Example product card -->
+            <div class="card">
+                <div class="image-container">
+                    <img src="images/sample_product.jpg" alt="Sample Product">
+                </div>
+                <div class="content">
+                    <h3>Sample Product</h3>
+                    <p>Sample description of the product.</p>
+                    <form method="POST" action="process_addcart.php">
+                        <input type="hidden" name="product_id" value="sample_product_id">
+                        <button type="submit" name="add_to_cart">Pesan Sekarang</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Repeat for each product as necessary -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <!-- Footer content here -->
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="index.js"></script>
+</body>
+</html>

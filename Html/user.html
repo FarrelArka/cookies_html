@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croquant Cookies</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/users.css">
+    <style>
+        /* CSS untuk dropdown profil */
+        .profile {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile img {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            border-radius: 10px;    
+            font-size: 15px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .profile:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logoContent">
+            <a href="#" class="logo"><img src="../images/logo kita.png" alt="Logo"></a>
+            <h1 class="logoName">Croquant Cookies</h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="user.html">Beranda</a>
+            <a href="product.html">Produk</a>
+            <a href="cart.html">Keranjang</a>
+            <a href="order.html">Pesanan</a>
+            <a href="#contact">Hubungi</a>
+        </nav>
+
+        <div class="nav-right">
+            <div class="icon">
+                <i class="fas fa-search" id="search"></i>
+                <i class="fas fa-bars" id="menu-bar"></i>
+            </div>
+            <div class="search">
+                <form action="search.htmml" method="GET">
+                    <input type="search" name="query" placeholder="Search..." required>
+                    <input type="hidden"><i class="fas fa-search"></i>
+                </form>
+            </div>
+
+            <div class="profile">
+                <img src="../uploads/pur.jpg" alt="Profile Picture" width="50" height="50" id="profileImage">
+                <div class="dropdown-content">
+                    <a href="profile_user.html">Profil</a>
+                    <a href="logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="homeContent">
+            <h2>Kue Enak Untuk Semua</h2>
+            <p>Kue kering lezat untuk semua. Nikmati kelezatan dalam setiap gigitan, sempurna untuk momen istimewa.</p>
+            <div class="home-btn">
+                <a href="product.html"><button>Lihat Selengkapnya</button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product" id="product">
+        <div class="heading">
+            <h2>Produk Kami</h2>
+        </div>
+        <div class="swiper product-row">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="../images/3.png"  alt="Produk 2">
+                    </div>
+                    <div class="product-content">
+                        <h3>Produk 2</h3>
+                        <p></p>
+                        <div class="orderNow"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="../images/4.png" alt="Produk 3">
+                    </div>
+                    <div class="product-content">
+                        <h3>Produk 3</h3>
+                    </div>
+                    <div class="orderNow"></div>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="../images/5.png" alt="Produk 4">
+                    </div>
+                    <div class="product-content">
+                        <h3>Produk 4</h3>
+                    </div>
+                    <div class="orderNow"></div>
+
+                </div>
+                <div class="swiper-slide box">
+                    <div class="img">
+                        <img src="../images/6.png" alt="Produk 5">
+                    </div>
+                    <div class="product-content">
+                        <h3>Produk 5</h3>
+                    </div>
+                    <div class="orderNow"></div>
+
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>Tentang</h2>
+        <h3>Di sini, kami menghadirkan kue kering yang memanjakan lidah dengan kelezatan dan kualitas terbaik. Setiap produk kami dibuat dengan bahan berkualitas dan resep istimewa, sempurna untuk merayakan momen spesial atau sebagai camilan sehari-hari. Rasakan kebahagiaan dan kehangatan di setiap gigitan!</h3>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer" id="contact">
+        <div class="box-container">
+            <div class="mainBox">
+                <div class="content">
+                    <a href="#">
+                        <img src="../images/logo kita.png" alt="Logo">
+                    </a>
+                    <h1 class="logoName">Croquant Cookies</h1>
+                </div>
+                <p>Kue kering lezat untuk semua. Nikmati kelezatan dalam setiap gigitan, sempurna untuk momen istimewa.</p>
+            </div>
+            <div class="box">
+                <h3>Link Cepat</h3>
+                <a href="user.php"> <i class="fas fa-arrow-right"></i>Beranda</a>
+                <a href="product.php"> <i class="fas fa-arrow-right"></i>Produk</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Blog</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Umpan Balik</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Kontak</a>
+            </div>
+            <div class="box">
+                <h3>Link Ekstra</h3>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Info Akun</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Pesanan</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Metode Pembayaran</a>
+            </div>
+            <div class="box">
+                    <h3>Contact Info</h3>
+                    <a href="#"> <i class="fas fa-phone"></i>+62 896 0262 3481</a>
+                    <a href="#"> <i
+                            class="fas fa-envelope"></i>croquant.cookies00@gmail.com</a>
+
+                </div>
+        </div>
+        <div class="credit">
+            Created by <span>Farrel Arkana</span> | @CroquantCookies        
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // JavaScript untuk toggle dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            var profileImage = document.getElementById('profileImage');
+            var dropdownContent = document.querySelector('.dropdown-content');
+
+            profileImage.addEventListener('click', function(event) {
+                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Menutup dropdown jika mengklik di luar area dropdown
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('#profileImage')) {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="../js/index.js"></script>
+</body>
+</html>

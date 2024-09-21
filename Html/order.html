@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croquant Cookies</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/order.css">
+    <style>
+        .profile {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile img {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            border-radius: 10px;    
+            font-size: 15px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .profile:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .order-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .order-item {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .order-item:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .order-images img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            width: 80%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        .popup-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .popup-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .popup .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logoContent">
+            <a href="#" class="logo"><img src="../images/logo kita.png" alt="Logo"></a>
+            <h1 class="logoName">Croquant Cookies</h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="user.html">Beranda</a>
+            <a href="product.html">Produk</a>
+            <a href="cart.html">Keranjang</a>
+            <a href="order.html">Pesanan</a>
+            <a href="#contact">Hubungi</a>
+        </nav>
+
+        <div class="nav-right">
+            <div class="icon">
+                <i class="fas fa-search" id="search"></i>
+                <i class="fas fa-bars" id="menu-bar"></i>
+            </div>
+            <div class="search">
+                <form action="search.htmml" method="GET">
+                    <input type="search" name="query" placeholder="Search..." required>
+                    <input type="hidden"><i class="fas fa-search"></i>
+                </form>
+            </div>
+
+            <div class="profile">
+                <img src="../uploads/pur.jpg" alt="Profile Picture" width="50" height="50" id="profileImage">
+                <div class="dropdown-content">
+                    <a href="profile_user.html">Profil</a>
+                    <a href="logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1>Order Status</h1>
+        <div class="order-list">
+            <!-- Repeat for each order -->
+            <div class="order-item" onclick="openPopup('transaction_id')">
+                <h2>Order 01</h2>
+                <p>Status: Proses</p>
+                <div class="order-images">
+                    <img src="../images/3.png" alt="Product Name" class="order-image">
+                    <!-- Repeat for each product -->
+                </div>
+            </div>
+            <!-- End repeat -->
+        </div>
+    </div>
+
+    <!-- Pop-up Detail Order -->
+    <!-- Repeat for each order -->
+    <div id="transaction_id" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('transaction_id')">&times;</span>
+            <h2>Order 01</h2>
+            <!-- Repeat for each product -->
+            <div class="popup-item">
+                <img src="../images/3.png" alt="Product Name" class="order-image">
+                <div class="pop-up-anjay">
+                    <p>Product: Kue Putri Salju</p>
+                    <p>Quantity: 1</p>
+                    <p>Total Bayar: 48.000</p>
+                </div>
+            </div>
+            <!-- End repeat -->
+            <p>Status: Proses</p>
+        </div>
+    </div>
+    <!-- End repeat -->
+
+    <footer class="footer" id="contact">
+        <div class="box-container">
+            <div class="mainBox">
+                <div class="content">
+                    <a href="#">
+                        <img src="../images/logo kita.png" alt="Logo">
+                    </a>
+                    <h1 class="logoName">Croquant Cookies</h1>
+                </div>
+                <p>Kue kering lezat untuk semua. Nikmati kelezatan dalam setiap gigitan, sempurna untuk momen istimewa.</p>
+            </div>
+            <div class="box">
+                <h3>Link Cepat</h3>
+                <a href="user.php"> <i class="fas fa-arrow-right"></i>Beranda</a>
+                <a href="product.php"> <i class="fas fa-arrow-right"></i>Produk</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Blog</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Umpan Balik</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Kontak</a>
+            </div>
+            <div class="box">
+                <h3>Link Ekstra</h3>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Info Akun</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Pesanan</a>
+                <a href="#"> <i class="fas fa-arrow-right"></i>Metode Pembayaran</a>
+            </div>
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#"> <i class="fas fa-phone"></i>+62 896 0262 3481</a>
+                <a href="#"> <i class="fas fa-envelope"></i>croquant.cookies00@gmail.com</a>
+            </div>
+        </div>
+        <div class="credit">
+            Created by <span>Farrel Arkana</span> | @CroquantCookies        
+        </div>
+    </footer>
+    <script>
+        function openPopup(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+    <script>
+        var swiper = new Swiper('.swiper', {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croquant Cookies</title>
+    <style>
+        .profile {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile img {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            border-radius: 10px;    
+            font-size: 15px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .profile:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Modal Background */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../Css/keranjang.css">
+
+    <!-- Midtrans Snap.js -->
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logoContent">
+            <a href="#" class="logo"><img src="../images/logo kita.png" alt="Logo"></a>
+            <h1 class="logoName">Croquant Cookies</h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="user.html">Beranda</a>
+            <a href="product.html">Produk</a>
+            <a href="cart.html">Keranjang</a>
+            <a href="order.html">Pesanan</a>
+            <a href="#contact">Hubungi</a>
+        </nav>
+
+        <div class="nav-right">
+            <div class="icon">
+                <i class="fas fa-search" id="search"></i>
+                <i class="fas fa-bars" id="menu-bar"></i>
+            </div>
+            <div class="search">
+                <form action="search.html" method="GET">
+                    <input type="search" name="query" placeholder="Search..." required>
+                    <input type="hidden"><i class="fas fa-search"></i>
+                </form>
+            </div>
+
+            <div class="profile">
+                <img src="../uploads/pur.jpg" alt="Profile Picture" width="50" height="50" id="profileImage">
+                <div class="dropdown-content">
+                    <a href="profile_user.html">Profil</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="cart">
+            <div class="cart-header">
+                <h2>Keranjang Anda</h2>
+                <span>Jumlah Item: 1</span>
+            </div>
+            <div class="cart-item">
+                <div class="item-info">
+                    <img src="../images/3.png" alt="Product 1">
+                    <div class="item-details">
+                        <h3>Produk 1</h3>
+
+                    </div>
+                </div>
+                <div class="item-quantity">
+                    <form method="POST" action="update_quantity.html">
+                        <input type="hidden" name="product_id" value="1">
+                        <input type="number" name="quantity" value="1" min="1">
+                        <button type="submit" name="update_quantity">Update</button>
+                    </form>
+                </div>
+                <div class="item-price">Rp. 48.000</div>
+            </div>
+           
+            <div class="cart-total">
+                <h3>Total Harga: Rp. 48.000</h3>
+            </div>
+            <!-- Tombol di luar pop-up -->
+            <div class="cart-actions">
+                <button class="btn-outside" onclick="window.location.href='product.html'">Kembali Berbelanja</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn-outside" id="checkoutButton">
+                    Checkout
+                </button>
+            </div>
+            <div id="checkoutModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Pilih Metode Pembayaran</h5>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="checkout.php">
+                            <div class="payment-options">
+                                <div class="payment-method">
+                                    <label>
+                                        <input type="radio" name="payment_method" value="cod" required>
+                                        <span style="font-weight: bold;">Cash on Delivery (COD)</span>
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <label>
+                                        <input type="radio" name="payment_method" value="transfer" required>
+                                        <span style="font-weight: bold;">E-Wallet</span>
+                                    </label>
+                                   
+                                </div>
+                            </div>
+                            <div class="discount-options">
+                                <h6>Gunakan Diskon Poin Anda</h6>
+                                <p>Poin Anda:0</p>
+                                <label><input type="checkbox" name="use_points" id="use_points" value="yes"> <span style="font-weight: bold;">Gunakan poin untuk diskon</span></label>
+                            </div>
+                            <div class="modal-footer">
+                                <p>Total Bayar: Rp. <span id="totalBayar">48.000</span></p>
+                                <button type="submit" name="proceed_payment" class="btn-popup">Lanjutkan Pembayaran</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    
+
+    <script>
+        // Modal script
+        var modal = document.getElementById("checkoutModal");
+        var btn = document.getElementById("checkoutButton");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
