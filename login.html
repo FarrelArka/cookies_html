@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/daftar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+      position: relative;
+      width: 100%;
+    }
+
+    .close-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .close-icon:hover {
+      color: #000;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.php" class="close-icon">&times;</a>
+        <div class="title">Masuk</div>
+        <div class="content">
+            <form action="user.html" method="post" enctype="multipart/form-data">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Nama Pengguna</span>
+                        <input type="text" placeholder="Masukkan nama pengguna anda" name="username" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" placeholder="Masukkan kata sandi anda" name="password" required>
+                    </div>      
+                    <div class="input-box">
+                        <span class="details">Konfirmasi Password</span>
+                        <input type="password" placeholder="Konfirmasi kata sandi anda" name="confirm-password" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Masuk" name="submit">
+                </div>
+                <span>Belum punya akun? <a href="register.html">Daftar</a></span>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

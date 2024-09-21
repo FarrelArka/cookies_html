@@ -6,8 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="img/favicon.ico" rel="icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -19,7 +19,7 @@
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle me-lg-2" src="../uploads/Yuannn.jpg" alt="Profile Picture" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle me-lg-2" src="uploads/Yuannn.jpg" alt="Profile Picture" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
@@ -29,9 +29,9 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="admin.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="produk.html" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Produk</a>
+                    <a href="produk.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Produk</a>
                     <a href="manage_order.html" class="nav-item nav-link"><i class="fa fa-edit me-2"></i>Order</a>
-                    <a href="manage_points.html" class="nav-item nav-link"><i class="fa fa-star me-2"></i>Points</a>
+                    <a href="manage_points.html" class="nav-item nav-link active"><i class="fa fa-star me-2"></i>Points</a>
                 </div>
             </nav>
         </div>
@@ -46,7 +46,7 @@
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="../uploads/Yuannn.jpg" alt="Profile Picture" style="width: 40px; height: 40px;">
+                            <img class="rounded-circle me-lg-2" src="uploads/Yuannn.jpg" alt="Profile Picture" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex">Yuannn</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -59,63 +59,71 @@
 
             <!-- Navbar End -->
 
-            <!-- Produk Section Start -->
+            <!-- Manage Points Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Daftar Produk</h6>
-                        <a class="btn btn-sm btn-primary" href="tambah_produk.html">Tambah</a>
+                        <h6 class="mb-0">Manage User Points</h6>
                     </div>
+
+                    <!-- Display Status Message -->
+                    <div class="alert alert-success" style="display: none;">Points updated successfully.</div>
+                    <div class="alert alert-danger" style="display: none;">An error occurred. Please try again.</div>
+
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-dark">
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Deskripsi</th>
-                                    <th scope="col">Harga</th>
-                                    <th scope="col">Stok</th>
-                                    <th scope="col">Gambar</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">User ID</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Points</th>
+                                    <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <!-- Example row -->
                                 <tr>
-                                    <td>Kue Putri Salju</td>
-                                    <td> Putri Salju adalah kue kering lembut, manis, dan berbalut gula halus, memberikan sensasi dingin seperti salju saat digigit. Cocok untuk momen spesial atau hadiah istimewa.</td>
-                                    <td>Rp 48000</td>
-                                    <td>10</td>
-                                    <td><img src="../uploads/3.png" alt="Nama Produk" style="width: 40px; height: 40px;"></td>
+                                    <td>1</td>
+                                    <td>Purnama</td>
+                                    <td>1000</td>
                                     <td>
-                                        <a class="btn btn-sm btn-primary" href="edit_produk.html">Edit</a>
-                                        <a class="btn btn-sm btn-danger" style="margin-top: 10px;" href="" onclick="return confirm('Yakin ingin menghapus produk ini?');">Hapus</a>
+                                        <form action="" method="POST">
+                                            <div class="input-group">
+                                                <input type="hidden" name="user_id" value="1">
+                                                <input type="number" name="points" value="1000" min="0" class="form-control form-control-sm">
+                                                <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                                            </div>
+                                        </form>
                                     </td>
                                 </tr>
-                                <!-- Tambahkan baris produk lain sesuai kebutuhan -->
+                                <!-- Repeat rows as necessary -->
                                 <tr>
-                                    <td colspan="7">Tidak ada produk</td>
+                                    <td colspan="4" class="text-center">Tidak ada data</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <!-- Produk Section End -->
+            <!-- Manage Points End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Croquant Cookies</a>, All Right Reserved. 
+                            &copy; <a href="#">Croquant Cookies</a>, All Right Reserved.
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                            <!-- Credits removed -->
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Footer End -->
         </div>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
         <!-- Content End -->
-
-        <!-- Back to Top -->
     </div>
 
     <!-- JavaScript Libraries -->
@@ -130,7 +138,12 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Fungsi untuk menghilangkan spinner saat halaman selesai dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('spinner').style.display = 'none';
+        });
+    </script>
 </body>
-
 </html>

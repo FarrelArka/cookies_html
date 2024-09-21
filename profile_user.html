@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/styles.css" rel="stylesheet"> <!-- Template Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet"> <!-- Template Stylesheet -->
     <style>
         .card {
             width: 350px; /* Kecilkan lebar card */
@@ -39,6 +39,26 @@
             border: 5px solid #fff; /* Tambahkan border putih di sekitar gambar */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan di gambar */
         }
+        .button {
+            color: #fff; /* Text color */
+            background-color: #010101; /* Black background */
+            font-weight: bold;
+            width: 120px;
+            height: 45px;
+            text-align: center;
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add slight rounding to corners */
+            cursor: pointer; /* Change cursor on hover */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            padding: 10px; /* Add padding to prevent text from touching the edges */
+            display: flex; /* Use Flexbox */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+        }
+        .button:hover {
+            background-color: gray; /* Gray background on hover */
+            color: #fff; /* White text on hover */
+        }
     </style>
 </head>
 <body>
@@ -48,24 +68,24 @@
             <div class="card">
                 <div class="card-body">
                     <!-- Profile Picture -->
-                    <img src="../uploads/pur.jpg" alt="Profile Picture" class="rounded-circle mb-3">
+                    <img src="uploads/pur.jpg" alt="Profile Picture" class="rounded-circle mb-3">
                     
                     <h5 class="card-title text-center">Profile Information</h5>
                     
                     <div class="info-row">
                         <span class="info-label">Username:</span>
-                        <span>Yuannn</span>
+                        <span>Purnama</span>
                     </div>
                     <div class="info-row">
                         <span class="info-label">Nomer Hp:</span>
-                        <span>12345661233</span>
+                        <span>08977788909</span>
                     </div>
                     <div class="info-row">
                         <span class="info-label">Email:</span>
-                        <span>yuannzing@gmail.com</span>
+                        <span>purnama@gmail.com</span>
                     </div>
 
-                    <a href="edit_profile.html" class="btn btn-primary mt-3">Edit Profile</a>
+                    <a href="edit_profile.php" class="button mt-3">Edit Profile</a>
                     <a href="user.html" class="btn btn-secondary mt-2">Back</a>
                 </div>
             </div>

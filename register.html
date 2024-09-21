@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Registration</title>
-  <link rel="stylesheet" href="../css/daftar.css">
+  <link rel="stylesheet" href="css/daftar.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     .container {
@@ -28,13 +28,25 @@
 <body>
   <div class="container">
     <a href="index.php" class="close-icon">&times;</a>
-    <div class="title">Masuk</div>
+    <div class="title">Pendaftaran</div>
     <div class="content">
-        <form action="user.html" method="post" enctype="multipart/form-data">
+        <form action="login.html" method="post" enctype="multipart/form-data">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nama Pengguna</span>
             <input type="text" placeholder="Masuk kan nama pengguna anda" name="username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Masukkan email anda" name="email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Nomor Hp</span>
+            <input type="number" placeholder="Masukkan nomer hp anda" name="phone" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Alamat</span>
+            <input type="address" placeholder="Masukkan alamat Anda" name="address" required>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
@@ -44,11 +56,15 @@
             <span class="details">Konfirmasi Password</span>
             <input type="password" placeholder="konfirmasi sandi anda" name="confirm-password" required>
           </div>
+          <div class="input-detail">
+            <span class="details">Foto Profile</span>
+            <input type="file" placeholder="pilih gambar" name="profile-picture" required>
+          </div>
         </div>
         <div class="button">
-          <a href="user.html"><input type="submit" value="Masuk" name="submit"></a>
+          <input type="submit" value="Daftar" name="kirim">
         </div>
-        <span>Don't have an account? <a href="register.html">Daftar</a></span>
+        <span>Already have an account? <a href="login.html">Masuk</a></span>
       </form>
     </div>
   </div>
